@@ -1,4 +1,5 @@
 #include "query_best.h"
+#include "logger.h"
 #include <iostream>
 #include <dataContinuous.h>
 
@@ -73,7 +74,9 @@ bool Query_Best::canimprove ( QueryData *left, Error ub ) {
 }
 
 bool Query_Best::canSkip( QueryData *actualBest ){
-    return ((QueryData_Best*) actualBest )->error == ((QueryData_Best*) actualBest )->lowerBound;
+    Logger::showMessageAndReturn("checking canSkip");
+    // std::cout << "checking canSkip" << std::endl;
+    return ((QueryData_Best*) actualBest )->error <= ((QueryData_Best*) actualBest )->lowerBound;
 }
 
 void Query_Best::printAccuracy ( DataManager *data2, QueryData_Best *data, string* out ) {

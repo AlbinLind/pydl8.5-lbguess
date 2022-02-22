@@ -1,31 +1,20 @@
-|Travis|_ |CircleCI|_ |ReadTheDocs|_ |Codecov|_
+This is a fork of `dl8.5 <https://github.com/aia-uclouvain/pydl8.5/tree/b9583c8d72d7ca756041e4dafbdc3ffb7fc083eb>`_, which adds lower-bound guessing, as outlined in the paper  `Fast Sparse Decision Tree Optimization via Reference Ensembles <https://arxiv.org/abs/2112.00798>`_. 
 
-.. |Travis| image:: https://travis-ci.org/aglingael/dl8.5.svg?branch=master
-.. _Travis: https://travis-ci.org/aglingael/dl8.5
+**Installation**
 
-.. |CircleCI| image:: https://circleci.com/gh/aglingael/dl8.5/tree/master.svg?style=svg
-.. _CircleCI: https://circleci.com/gh/aglingael/dl8.5/
+``python3 setup.py install``
 
-.. |ReadTheDocs| image:: https://readthedocs.org/projects/dl85/badge/?version=latest
-.. _ReadTheDocs: https://dl85.readthedocs.io/en/latest/
+Note: you may need to manually uninstall dl8.5 with pip if you have used the pip installation of dl8.5 before. 
+ 
+**Differences from dl8.5**
 
-.. |Codecov| image:: https://codecov.io/gh/aglingael/dl8.5/branch/master/graph/badge.svg
-.. _Codecov: https://codecov.io/gh/aglingael/dl8.5
+Lower-bound guessing is handled via an extra input `warm`, which would be a vector of the predictions of a reference model for each point in the training set. (label 0 = reference model's prediction was incorrect for this point, 1 = reference model's prediction was correct for this point)
 
-:Authors:
-    Gaël Aglin, Siegfried Nijssen, Pierre Schaus
+All use cases for dl8.5 from prior to September 2021 are supported, although we currently do not support the use of a reference model with the hyperparameter iterative=true.
 
-`Relevant paper <https://dial.uclouvain.be/pr/boreal/fr/object/boreal%3A223390/datastream/PDF_01/view>`_: [DL852020]_
+**Relevant Papers**
 
-This project implements an algorithm for inferring optimal binary decision trees.
-It is scikit-learn compatible and can be used in combination with scikit-learn.
-As a scikit-learn classifier, it implements the methods "fit" and "predict".
+- Aglin, G., Nijssen, S., Schaus, P. Learning optimal decision trees using caching branch-and-bound search. In AAAI. 2020.
+- McTavish, H., Zhong, C., Achermann, R., Karimalis, I., Chen, J., Rudin, C., & Seltzer, M. Fast Sparse Decision Tree Optimization via Reference Ensembles. In AAAI. 2022.
 
-This tool can be installed in two ways:
-
-* download the source from github and install using the command ``python3 setup.py install`` in the root folder
-* install from pip by using the command ``pip install dl8.5`` in the console
-
-**Disclaimer: The compilation of the project has been tested with C++ compilers on the Linux and MacOS operating systems; Windows is not yet supported.**
-
-.. [DL852020] Aglin, G., Nijssen, S., Schaus, P. Learning optimal decision trees using caching branch-and-bound search. In AAAI. 2020.
+Note: This fork was created prior to dl8.5's September 2021 updates to support non-classification tasks.  

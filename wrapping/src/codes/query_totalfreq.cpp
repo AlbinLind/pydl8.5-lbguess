@@ -1,5 +1,6 @@
 #include "query_totalfreq.h"
 #include "trie.h"
+#include "logger.h"
 #include <iostream>
 
 Query_TotalFreq::Query_TotalFreq(Trie *trie,DataManager *data, ExpError *experror, int timeLimit, bool continuous,
@@ -85,19 +86,27 @@ QueryData *Query_TotalFreq::initData(RCover *cover, Error parent_ub, Support min
 
             }
             error = itemsetSupport.second - maxclassval;
-            int remaining = itemsetSupport.second - (maxclassval + secondval);
-            if (maxclassval >= minsup){
-                if (secondval >= minsup)
-                    lowerb = remaining;
-                else
-                    if (secondval + remaining >= minsup)
-                        lowerb = remaining;
-                    else
-                        lowerb = minsup - secondval;
-            } else
-                if (secondval < minsup)
-                    lowerb = remaining;
-            lowerb = 0;
+            // int remaining = itemsetSupport.second - (maxclassval + secondval);
+            // if (maxclassval >= minsup){
+            //     if (secondval >= minsup)
+            //         lowerb = remaining;
+            //     else
+            //         if (secondval + remaining >= minsup)
+            //             lowerb = remaining;
+            //         else
+            //             lowerb = minsup - secondval;
+            // } else
+            //     if (secondval < minsup)
+            //         lowerb = remaining;
+            // lowerb = 0;
+            int supportForWarm = cover->getSupportForWarm();
+            if (supportForWarm == -1) {
+                lowerb = 0;
+            } else {
+                lowerb = itemsetSupport.second - cover->getSupportForWarm();
+                Logger::showMessageAndReturn("lowerBound warm: ", lowerb);
+            }
+            // std::cout<< "lowerBound warm " << lowerb << std::endl;
         }
         deleteSupports(itemsetSupport.first);
     } else {//slow error or predictor error function. Not need to compute support

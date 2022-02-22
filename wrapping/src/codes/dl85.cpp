@@ -28,6 +28,7 @@ string search(//std::function<float(Array<int>::iterator)> callback,
               Class nclasses,
               Bool *data,
               Class *target,
+              Class *warm,
               float maxError,
               bool stopAfterError,
               bool iterative,
@@ -47,6 +48,8 @@ string search(//std::function<float(Array<int>::iterator)> callback,
               bool nps_param,
               bool verbose_param,
               bool predict) {
+
+    std::cout << "TESTING STUFF" << std::endl;
 
     clock_t t = clock();
 
@@ -68,7 +71,10 @@ string search(//std::function<float(Array<int>::iterator)> callback,
     Trie *trie = new Trie;
     Query *query = NULL;
 
-    DataManager *dataReader = new DataManager(supports, ntransactions, nattributes, nclasses, data, target);
+    // std::cout << warm[0] << warm[1] << warm[2] << warm[11] << std::endl;
+    // std::cout << ntransactions << std::endl;
+
+    DataManager *dataReader = new DataManager(supports, ntransactions, nattributes, nclasses, data, target, warm);
 
     if (save)
         return 0;

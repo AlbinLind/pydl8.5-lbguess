@@ -7,8 +7,9 @@ from dl85 import __version__
 
 DISTNAME = 'dl8.5'
 DESCRIPTION = 'A package to build an optimal binary decision tree classifier.'
-with codecs.open('README.rst', encoding='utf-8-sig') as f:
-    LONG_DESCRIPTION = f.read()
+# with codecs.open('README.rst', encoding='utf-8-sig') as f:
+#     LONG_DESCRIPTION = f.read()
+LONG_DESCRIPTION="TODO: ADD ME"
 AUTHORS = 'Gael Aglin, Siegfried Nijssen, Pierre Schaus'
 AUTHORS_EMAIL = 'aglingael@gmail.com, siegfried.nijssen@gmail.com, pschaus@gmail.com'
 URL = 'https://github.com/aglingael/dl8.5'
