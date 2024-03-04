@@ -1,6 +1,6 @@
 from sklearn.base import ClusterMixin
 from sklearn.utils.validation import assert_all_finite, check_array
-from sklearn.neighbors import DistanceMetric
+from sklearn.metrics import DistanceMetric
 from ..predictors.predictor import DL85Predictor
 import numpy as np
 
