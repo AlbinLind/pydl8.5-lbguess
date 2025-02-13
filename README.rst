@@ -2,9 +2,7 @@ This is a fork of the fork of `dl8.5 <https://github.com/aia-uclouvain/pydl8.5/t
 
 **Installation**
 
-``python3 setup.py install``
-
-Note: you may need to manually uninstall dl8.5 with pip if you have used the pip installation of dl8.5 before. 
+``pip install git+https://github.com/AlbinLind/pydl8.5-lbguess.git``
  
 **Differences from dl8.5**
 
