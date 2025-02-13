@@ -1,4 +1,4 @@
-This is a fork of `dl8.5 <https://github.com/aia-uclouvain/pydl8.5/tree/b9583c8d72d7ca756041e4dafbdc3ffb7fc083eb>`_, which adds lower-bound guessing, as outlined in the paper  `Fast Sparse Decision Tree Optimization via Reference Ensembles <https://arxiv.org/abs/2112.00798>`_. 
+This is a fork of the for of `dl8.5 <https://github.com/aia-uclouvain/pydl8.5/tree/b9583c8d72d7ca756041e4dafbdc3ffb7fc083eb>`_, which adds lower-bound guessing, as outlined in the paper  `Fast Sparse Decision Tree Optimization via Reference Ensembles <https://arxiv.org/abs/2112.00798>`_. This new fork contains a PEP-517 compliant pyproject.toml for modern python.
 
 **Installation**
 
