@@ -1,0 +1,28 @@
+[project]
+name = "dl8.5"
+version = "0.1.0"  # Consider reading this dynamically from dl85.__version__
+description = "A package to build an optimal binary decision tree classifier."
+readme = "README.rst"
+authors = [
+    { name = "Gael Aglin", email = "aglingael@gmail.com" },
+    { name = "Siegfried Nijssen", email = "siegfried.nijssen@gmail.com" },
+    { name = "Pierre Schaus", email = "pschaus@gmail.com" },
+    { name = "Albin Lindqvist", email="albin.lindqvist@hotmail.se"}
+]
+license = { file = "LICENSE.txt" }
+keywords = ["decision trees", "discrete optimization", "classification"]
+dependencies = ["setuptools", "cython", "numpy", "scikit-learn"]
+requires-python = ">=3.6"
+
+[project.urls]
+Homepage = "https://github.com/aglingael/dl8.5"
+Documentation = "https://dl85.readthedocs.io/en/latest/?badge=latest"
+Repository = "https://github.com/aglingael/dl8.5"
+
+[build-system]
+requires = ["setuptools", "wheel", "cython", "numpy"]
+build-backend = "setuptools.build_meta"
+
+
+[tool.setuptools]
+packages = ["dl85"]
