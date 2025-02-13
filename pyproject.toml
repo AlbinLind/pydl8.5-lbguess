@@ -1,6 +1,6 @@
 [project]
 name = "dl8.5"
-version = "0.1.0"  # Consider reading this dynamically from dl85.__version__
+version = "0.0.15"  # Consider reading this dynamically from dl85.__version__
 description = "A package to build an optimal binary decision tree classifier."
 readme = "README.rst"
 authors = [
